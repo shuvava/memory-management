@@ -331,3 +331,4 @@ ASALocalRun/
 packages/*
 *.dSYM
 .vscode
+build
