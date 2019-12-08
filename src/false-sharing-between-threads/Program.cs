@@ -3,13 +3,13 @@
 using BenchmarkDotNet.Running;
 
 
-namespace sequential_memory_access
+namespace false_sharing_between_threads
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<MemoryAccessBenchmarks>();
+            var summary = BenchmarkRunner.Run<ThreadBenchmark>();
         }
     }
 }

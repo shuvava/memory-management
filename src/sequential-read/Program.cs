@@ -3,13 +3,13 @@
 using BenchmarkDotNet.Running;
 
 
-namespace sequential_memory_access
+namespace sequential_read
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<MemoryAccessBenchmarks>();
+            var summary = BenchmarkRunner.Run<SequentialReadBenchmark>();
         }
     }
 }
