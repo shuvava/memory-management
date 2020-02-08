@@ -7,7 +7,7 @@ namespace sequential_read
 {
     public class SequentialReadBenchmark
     {
-        private OneLineStruct[] arr;
+        private OneLineStruct[] _arr;
 
         [Params(256, 512, 4096, 16384)] public int Size;
 
@@ -15,11 +15,11 @@ namespace sequential_read
         [GlobalSetup]
         public void Setup()
         {
-            arr = new OneLineStruct[Size];
+            _arr = new OneLineStruct[Size];
             var random = new Random(42);
             for(int j=0; j< Size; ++j)
             {
-                arr[j] = new OneLineStruct
+                _arr[j] = new OneLineStruct
                 {
                     data1 = random.Next(1000)
                 };
@@ -43,6 +43,6 @@ namespace sequential_read
 
 
         [Benchmark]
-        public long SequentialReadPattern() => OneLineStructSequentialReadPattern(arr);
+        public long SequentialReadPattern() => OneLineStructSequentialReadPattern(_arr);
     }
 }

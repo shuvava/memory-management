@@ -1,13 +1,11 @@
-﻿using System;
-
-using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Running;
 
 
 namespace sequential_memory_access
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var summary = BenchmarkRunner.Run<MemoryAccessBenchmarks>();
         }
